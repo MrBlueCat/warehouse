@@ -1,0 +1,28 @@
+<header class="menu">
+    <ul>
+        <li>
+            <a routerLink=""><img class="logo-img" src="assets/_images/logo.png"></a>
+        </li>
+
+        <li *ngIf="!isLoggedIn" class="authentication">
+            <a routerLink="/register" class="btn btn-menu ">Registration</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="authentication">
+            <a routerLink="/login" class="btn btn-menu">Login</a>
+        </li>
+
+
+        <li *ngIf="isLoggedIn" class="authentication">
+            <a routerLink="/login" class="btn btn-menu">Logout</a>
+        </li>
+
+        <li *ngIf="isLoggedIn" class="authentication">
+            <a routerLink="" class="user-avatar">
+                <div class="circle" *ngIf="!userAvatar">
+                    {{firstLoginLetter}}
+                </div>
+                <img *ngIf="userAvatar" class="avatar" src="{{userAvatar}}">
+            </a>
+        </li>
+    </ul>
+</header>

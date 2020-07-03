@@ -1,0 +1,31 @@
+<div class="add-item">
+    <button class="btn btn-success" (click)="openAddDialog()">Add item!</button>
+</div>
+<!--<form #addItemForm="ngForm" novalidate (ngSubmit)="add(addItemForm)">
+        <ul>
+            <li>
+                <label>Item name:</label>
+                <input class="form-control" name="name" [(ngModel)]="item.name" required>
+            </li>
+            <li>
+                <label>Manufacturer:</label>
+                <select class="form-control" name="munSelect" [(ngModel)]="item.manufacturerId" required>
+          <option [ngValue]="manuf.id" *ngFor="let manuf of manufacturers">
+            {{manuf.name}}
+          </option>
+        </select>
+            </li>
+            <li>
+                <label>Customer:</label>
+                <select class="form-control" name="custSelect" [(ngModel)]="item.customerId">
+          <option [ngValue]="cust.id" *ngFor="let cust of customers">
+            {{cust.name}}
+          </option>
+        </select>
+            </li>
+            <li>
+                <br> <input type="submit" [disabled]="addItemForm.invalid" class="btn btn-success" value="Add">
+            </li>
+        </ul>
+
+    </form>-->

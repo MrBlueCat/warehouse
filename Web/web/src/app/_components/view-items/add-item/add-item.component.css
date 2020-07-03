@@ -1,0 +1,18 @@
+.add-item {
+    margin: 40px 0px;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+li {
+    display: inline-table;
+    width: 150px;
+    padding-right: 30px;
+}
+
+.form-control {
+    width: 200px;
+}

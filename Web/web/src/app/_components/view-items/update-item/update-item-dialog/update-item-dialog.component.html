@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Change item</h1>
+<div mat-dialog-content>
+    <p>Name:</p>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.itemName">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()" class="btn btn-danger">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.itemName" cdkFocusInitial class="btn btn-success">Ok</button>
+</div>

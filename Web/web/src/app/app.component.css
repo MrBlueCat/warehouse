@@ -1,0 +1,18 @@
+.content {
+    margin: 30px;
+    margin-top: 20px;
+}
+
+:host /deep/ .form-control,
+:host /deep/ .alert {
+    width: 350px;
+}
+
+:host /deep/ .alert {
+    padding: 0px 15px;
+    margin: 10px 0px;
+}
+
+:host /deep/ .l-btn {
+    margin-top: 20px;
+}

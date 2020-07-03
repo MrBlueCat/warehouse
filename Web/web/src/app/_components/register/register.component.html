@@ -1,0 +1,41 @@
+<div class="content">
+    <form [formGroup]="regirterForm" novalidate (ngSubmit)="register(regirterForm)">
+
+        <label>Login:</label>
+        <input class="form-control" formControlName="login" required>
+        <div *ngIf="loginInput.invalid && (loginInput.dirty || loginInput.touched)" class="error">
+            <div *ngIf="loginInput.errors">
+                Username is required.
+            </div>
+        </div>
+
+        <label>Password:</label>
+        <input class="form-control" type="password" formControlName="password" required>
+        <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+            <div *ngIf="passwordInput.errors">
+                Password is required.
+            </div>
+        </div>
+
+        <label>Confirm password:</label>
+        <input class="form-control" type="password" formControlName="confirmPassword" required>
+        <div *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)" class="error">
+            <div *ngIf="confirmPasswordInput.errors">
+                Wrong password.
+            </div>
+        </div>
+
+        <br><label>Choose avatar:</label>
+        <input type="file" (change)="onFileChanged($event)"> {{avatar}}
+        <img *ngIf="imgString" [src]="imgString" height="200"> <br/>
+
+        <div class="alert alert-danger" *ngIf="error">
+            <h5>{{error}}</h5>
+        </div>
+        <div class="l-btn">
+            <input type="submit" [disabled]="regirterForm.invalid" class="btn btn-success" value="Registration">
+            <app-wait-anim></app-wait-anim>
+        </div>
+
+    </form>
+</div>

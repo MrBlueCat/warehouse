@@ -1,0 +1,72 @@
+.menu {
+    padding: 0 10%;
+    height: 110px;
+    background-color: #313131;
+    -moz-window-shadow: initial;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+}
+
+li {
+    float: left;
+    line-height: 110px;
+}
+
+.authentication {
+    float: right;
+}
+
+.logo-img {
+    height: 80px;
+    width: 80px;
+}
+
+.logo-img:hover,
+.avatar:hover,
+.circle:hover {
+    opacity: 80%;
+}
+
+.btn-menu {
+    font-size: 120%;
+    font-weight: bolder;
+    color: white;
+}
+
+.btn-menu:hover {
+    color: rgb(252, 251, 184);
+}
+
+.btn-menu:focus {
+    color: rgb(238, 235, 85);
+}
+
+.btn-menu:active {
+    background: none;
+}
+
+.avatar,
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.circle {
+    margin-top: 60%;
+    line-height: 50px;
+    background: #5b87ff;
+    position: relative;
+    text-align: center;
+}
+
+.user-avatar {
+    text-decoration: none;
+    color: rgb(252, 251, 184);
+    font-weight: bold;
+    font-size: 200%;
+}

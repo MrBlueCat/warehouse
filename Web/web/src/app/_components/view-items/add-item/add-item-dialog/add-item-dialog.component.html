@@ -1,0 +1,32 @@
+<div mat-dialog-content>
+    <h1 mat-dialog-title>Add item</h1>
+    <form #addItemForm="ngForm" name="addForm" novalidate>
+        <h4>Item name:</h4>
+        <mat-form-field>
+            <input matInput [(ngModel)]="item.name" placeholder="Input name" name="name" required>
+        </mat-form-field>
+
+        <h4>Manufacturer:</h4>
+        <mat-form-field>
+            <mat-select name="munSelect" [(ngModel)]="item.manufacturerId" placeholder="Select manufacturer" required>
+                <mat-option [value]="manuf.id" *ngFor="let manuf of data.manufacturers">
+                    {{manuf.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h4>Customer:</h4>
+        <mat-form-field>
+            <mat-select name="custSelect" [(ngModel)]="item.customerId" placeholder="Select customer">
+                <mat-option [value]="cust.id" *ngFor="let cust of data.customers">
+                    {{cust.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()" class="btn btn-danger">Cancel</button>
+    <button mat-button [mat-dialog-close]="item" cdkFocusInitial class="btn btn-success" [disabled]="addItemForm.invalid">Ok</button>
+</div>

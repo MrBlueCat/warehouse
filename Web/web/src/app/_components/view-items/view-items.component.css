@@ -1,0 +1,55 @@
+:host /deep/ .mat-elevation-z8 button {
+    width: 30px;
+    height: 30px;
+}
+
+table {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.tableHeader * {
+    background-color: #313131;
+    color: white;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.info {
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    vertical-align: middle;
+}
+
+.info * {
+    display: inline;
+}
+
+::ng-deep .mat-sort-header-arrow {
+    color: #5b87ff;
+}
+
+::ng-deep .mat-sort-header-container {
+    color: #98b3ff;
+}
+
+.btn-group {
+    background-color: #313131;
+    color: white;
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+}
+
+::ng-deep .mat-menu-content {
+    background-color: #313131;
+}
+
+::ng-deep .mat-menu-item {
+    color: white;
+}
+
+::ng-deep .mat-sort-header-button{
+width:auto !important;
+}

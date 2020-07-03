@@ -1,0 +1,30 @@
+<div class="content">
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="logIn(loginForm)">
+
+        <label>Login:</label>
+        <input class="form-control" formControlName="login" required>
+        <div *ngIf="login.invalid && (login.dirty || login.touched)" class="error">
+            <div *ngIf="login.errors">
+                Username is required.
+            </div>
+        </div>
+
+        <label>Password:</label>
+        <input class="form-control" type="password" formControlName="password" required>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+            <div *ngIf="password.errors">
+                Password is required.
+            </div>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="error">
+            <h5>{{error}}</h5>
+        </div>
+
+        <div class="l-btn">
+            <input type="submit" [disabled]="loginForm.invalid" class="btn btn-success" value="Login">
+            <app-wait-anim></app-wait-anim>
+        </div>
+
+    </form>
+</div>

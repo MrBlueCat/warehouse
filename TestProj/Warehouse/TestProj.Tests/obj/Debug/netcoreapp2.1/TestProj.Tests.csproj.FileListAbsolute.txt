@@ -1,0 +1,17 @@
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\TestProj.Tests.deps.json
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\TestProj.Tests.runtimeconfig.json
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\TestProj.Tests.runtimeconfig.dev.json
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\TestProj.Tests.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\TestProj.Tests.pdb
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\Warehouse.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\bin\Debug\netcoreapp2.1\Warehouse.pdb
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.csprojAssemblyReference.cache
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.csproj.CoreCompileInputs.cache
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.AssemblyInfoInputs.cache
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.AssemblyInfo.cs
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.csproj.CopyComplete
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.dll
+D:\Projects\TestProj\Warehouse\TestProj.Tests\obj\Debug\netcoreapp2.1\TestProj.Tests.pdb
