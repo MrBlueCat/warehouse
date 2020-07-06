@@ -21,6 +21,10 @@ class httpService {
     return this.http.post(url, data);
   }
 
+  put(url, id, data) {
+    return this.http.put(url + '/' + id, data);
+  }
+
   delete(url, id) {
     return this.http.delete(url + '/' + id);
   }

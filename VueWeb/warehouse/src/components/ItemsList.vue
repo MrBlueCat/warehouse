@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th v-for="name in displayedColumns" v-bind:key="name">{{name}}</th>
-          <th style="width: 25px;" v-if='auth.isAdmin()'></th>
+          <th style="width: 25px;" v-if="auth.isAdmin()"></th>
         </tr>
       </thead>
       <tbody>
@@ -13,23 +13,46 @@
           <td>{{item.manufacturer? item.manufacturer.name : ''}}</td>
           <td>{{item.customer? item.customer.name : ''}}</td>
           <td>{{item.date}}</td>
-          <td v-if='auth.isAdmin()'>
+          <td v-if="auth.isAdmin()">
+            <button v-on:click="openEditDialog(item)" class="delButt editButt">E</button>
             <button v-on:click="deleteItem(item)" class="delButt">X</button>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <Dialog ref="dialog">
+      <component :is="itemForm" v-bind:itemEdit="itemEdit" v-on:edit="onEdit($event)"></component>
+    </Dialog>
   </div>
 </template>
 
 <script>
 import RequestService from "./Core/RequestService";
 import AuthService from "./Core/Auth";
+import Dialog from "./Common/Dialog.vue";
+import ItemForm from "./ItemForm.vue";
 
 export default {
+  components: {
+    Dialog,
+    ItemForm
+  },
+
   methods: {
     addItem(item) {
       this.items.push(item);
+    },
+
+    onEdit(item) {
+      let i = this.items.findIndex(e => e.id === item.id);
+      this.items.splice(i, 1, item) ;
+      this.$refs.dialog.close();
+    },
+
+    openEditDialog(item) {
+      this.itemEdit = item;
+      this.$refs.dialog.open();
     },
 
     deleteItem(item) {
@@ -38,7 +61,6 @@ export default {
 
         if (index > -1) {
           this.items.splice(index, 1);
-
         }
       });
     }
@@ -48,7 +70,9 @@ export default {
     return {
       displayedColumns: ["Name", "Manufacturer", "Customer", "Date"],
       items: [],
-      auth: AuthService
+      auth: AuthService,
+      itemEdit: null,
+      itemForm: "ItemForm"
     };
   },
 
@@ -76,6 +100,10 @@ td {
   color: white;
   background-color: rgb(245, 4, 4);
   border: none;
+}
+
+.editButt {
+  background-color: rgb(245, 189, 4);
 }
 
 table {

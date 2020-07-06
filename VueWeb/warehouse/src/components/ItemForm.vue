@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form name="addForm" @submit.prevent="createItem()">
+    <form name="addForm" @submit.prevent="submit()">
       <span class="title requiredTitle">Item name:</span>
       <input type="text" v-model="item.name" placeholder="Input name" class="input" required />
 
@@ -22,7 +22,8 @@
         >{{customer.name}}</option>
       </select>
 
-      <button type="submit" class="btn_sub">Add</button>
+      <button v-if="!itemEdit" type="submit" class="btn_sub">Add</button>
+      <button v-if="itemEdit" type="submit" class="btn_sub">Edit</button>
     </form>
   </div>
 </template>
@@ -31,11 +32,21 @@
 import RequestService from "./Core/RequestService";
 
 export default {
+  props: {
+    itemEdit: Object
+  },
+
   methods: {
-    createItem() {
-      RequestService.post('items', this.item).then(responce=>{
-        this.$emit('create', responce.data);
-      });
+    submit() {
+      if (this.itemEdit) {
+         RequestService.put("items", this.itemEdit.id, this.item).then(responce => {
+          this.$emit("edit", responce.data);
+        });
+      } else {
+        RequestService.post("items", this.item).then(responce => {
+          this.$emit("create", responce.data);
+        });
+      }
     },
   },
 
@@ -47,8 +58,7 @@ export default {
         customerId: null
       },
       manufacturers: [],
-      customers: [],
-      m:"fffff"
+      customers: []
     };
   },
 
@@ -60,10 +70,15 @@ export default {
     RequestService.getMany("customers").then(responce => {
       this.customers = responce.data;
     });
+
+    if (this.itemEdit) {
+      this.item.name = this.itemEdit.name;
+      this.item.manufacturerId = this.itemEdit.manufacturer.id;
+      this.item.customerId = this.itemEdit.customer.id;
+    }
   }
 };
 </script>
 
 <style>
-
 </style>
