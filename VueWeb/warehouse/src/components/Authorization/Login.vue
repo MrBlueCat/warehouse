@@ -3,7 +3,8 @@
     <h1>Login</h1>
     <form @submit.prevent="onSubmit()">
       <div class="control">
-        <span class="title requiredTitle">Email:</span>
+         (email: 1, pass: 1 - admin ///// email: 2, pass: 2 - user)
+        <span class="title requiredTitle">Email:)</span>
         <input type="text" id="email" name="email" class="input" v-model="form.email" required />
       </div>
 

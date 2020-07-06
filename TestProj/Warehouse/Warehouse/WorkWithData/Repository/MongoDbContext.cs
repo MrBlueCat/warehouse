@@ -14,10 +14,10 @@ namespace Warehouse
         public MongoDbContext(string connectionStr)
         {
             mongoClient = new MongoClient(connectionStr);
-            var dbName = mongoClient.ListDatabaseNames();
+            //var dbName = mongoClient.ListDatabaseNames();
 
-            if (dbName != null)
-                db = mongoClient.GetDatabase(dbName.First());
+            //if (dbName != null)
+            db = mongoClient.GetDatabase("TestBase");
         }
 
         public IMongoCollection<T> GetCollection<T>(string name)
